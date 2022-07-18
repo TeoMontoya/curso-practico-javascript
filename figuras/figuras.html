@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras geométricas | Curso práctico de JavaScript</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Figuras geometricas</h1>
+        <p>primer taller del curso practico de JavaScript</p>
+    </header>
+    <main>
+        <!-- Cuadrado -->
+        <section>
+            <h2>calcula el area y perimetro de un cuadrado</h2>
+            <form action="">
+                <label for="InputCuadrado">
+                    Escribe cuanto vale cada lado de tu cuadrado
+                </label>
+                <input id="InputCuadrado" type="number" />
+                <button type="button" onclick="calcularPerimetroCuadrado()">
+                    Calcular el perimetro
+                </button>
+                <button type="button" onclick="calcularAreaCuadrado()">
+                    Calcular el area
+                </button>
+            </form>
+        </section>
+
+        
+        <!-- triangulo isosceles -->
+
+
+        <section>
+            <h2>calcula el area y perimetro de un triangulo isosceles</h2>
+            <form action="">
+                <label for="InputTriangulo">
+                    Escribe cuanto vale cada lado 
+                </label>
+                <input id="Lado1" type="number" placeholder="Lado 1" />
+                <input id="Lado2" type="number" placeholder="Lado 2" />
+                <input id="Base" type="number" placeholder="Base" />
+
+             
+                <button type="button" onclick="calcularPerimetroTriangulo()">
+                    Calcular el perimetro
+                </button>
+                <button type="button" onclick="calcularAreaTriangulo()">
+                    Calcular el area
+                </button>
+                <button type="button" onclick="calcularAlturaTriangulo()">
+                    Calcular la altura
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="./figuras.js">
+    </script>
+</body>
+</html>
