@@ -224,12 +224,54 @@ function printFirstItem(arr) {
 
 ### 3️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
 
+originalmente habia escrito 
 ```
 
-function allElements(arr) {
-    console.log("El primer objeto es: " + arr[0]);
+function printEachElement(arr) {
+    for (i = 0; i < array.length; i++);
+    console.log(arr[i]);
+}
+printEachElement(['pepito', 'Array', 'Lista'])
+
+```
+Lo cual evidentemente no funciona.
+Hasta que entendí el error, el console.log va en un conjunto de llaves aparte de esta forma
+
+```
+
+function printEachElement(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+    }
 }
 
+printEachElement(['cosa1', 'cosa2', 'cosa3'])
+
 ```
 
+
 ### 4️⃣ Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).
+
+```
+
+const objeto = {
+    nombre: 'Carlos',
+    edad: 15,
+    comidasFavoritas: ['Pollo frito', 'Vegetales', 'pure de papa']
+};
+//puedo tratar el Object.values() como un arreglo, en una variable
+
+const arr = Object.values(objeto)
+
+// Ahora, voy a escribir la funcion que me deje imprimir sus elementos
+
+function printEachElement(objeto) {
+    const arr = Object.values(objeto)
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+    }
+}
+
+printEachElement(objeto)
+
+```
