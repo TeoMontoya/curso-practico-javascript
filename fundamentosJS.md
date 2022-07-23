@@ -143,7 +143,75 @@ Mi respuesta:
 
 ### 3️⃣ Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
 
-> 💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays y un solo condicional. 😏
+```
+
+function conseguirTipoSuscripcion(suscripcion) {
+        if (suscripcion == 'Free') {
+            console.log('Solo puedes tomar los cursos gratuitos');
+            return;
+        }
+        if (suscripcion == 'Basic') {
+            console.log('Puedes tomar casi todos los cursos de Platzi durante un mes');
+            return;
+        }
+        if (suscripcion == 'Expert') {
+            console.log('Puedes tomar casi todos los cursos de Platzi durante un año');
+            return;
+        }
+        if (suscripcion == 'Expertduo') {
+            console.log('Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año');
+            return;
+        }
+
+        console.warn('Ese tipo de suscripcion no existe.')
+}
+
+```
+
+> 💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays u objetos y un solo condicional. 😏
+
+<!---
+   Si en lugar de 4 elementos, tuviera 40 o 400, tendría que escribir un nuevo condicional por cada uno de los casos que existen y nelson.
+    lo que podemos hacer, es crear un objeto.
+    A este objeto vamos a crearles distintos elementos y cada elemento va a ser uno de los mensajes que yo imprimo en cada suscripcion y el nombre clave de cada uno de esos valores va a ser el nombre de la suscripcion como tal.
+    --->
+
+const tiposDeSuscripciones = {
+    free: 'Solo puedes tomar los cursos gratuitos',
+    basic: 'Puedes tomar casi todos los cursos de Platzi durante un mes',
+    expert: 'Puedes tomar casi todos los cursos de Platzi durante un año',
+    expertduo: 'Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año',
+}
+
+<!---  
+    Ahora si entro a tiposDeSuscripciones.free nos da automaticamente el mensaje -el valor- de esa propiedad, que es el mensaje que debemos dar
+
+    Pero Pero Pero Pero Pero Pero Pero Pero
+    tambien podemos entrar Y OJO QUE ES LO MAS IMPORTANTE
+    tambien podemos entrar a los objetos con estos simbolos [] SI Y SOLO SI  entre comillasle especificamos el nombre de la propiedad
+--->
+
+tiposDeSuscripciones['free']
+'Solo puedes tomar los cursos gratuitos'
+const ejemploSuscripcion = 'free'
+
+tiposDeSuscripciones[ejemploSuscripcion]
+'Solo puedes tomar los cursos gratuitos'
+
+<!--- 
+    Creamos una variable que se llame ejemploSuscripcion = 'free';
+    si llamamos a tiposDeSuscripciones[ejemploSuscripcion] tambien funciona
+    si esto lo convierto en una funcion que como parametro reciba la suscripcion que queremos ver si existe, eso nos va a ayudar a retornar el objeto que queremos imprimir.
+ --->
+
+function conseguirTipoSuscripcion(parametro) {
+    if (tiposDeSuscripciones[parametro]){
+        console.log(tiposDeSuscripciones[parametro]);
+        return;
+    }
+
+        console.warn('Ese tipo de suscripcion no existe')
+}
 
 
 ## Ciclos
@@ -155,6 +223,8 @@ Mi respuesta:
 
 - ¿Qué tipos de ciclos existen en JavaScript?
     Existen los ciclos for, while y do while.
+    Los ciclos while revisan primero la condicion y luego ejecuta el ciclo.
+    Mientras que el ciclo do while, ejecuta el ciclo al menos una vez y luego la condicon es revisada
 
 - ¿Qué es un ciclo infinito y por qué es un problema?
     Un ciclo infinito es un ciclo que se inicia pero no se puede detener. Es un problema porque va a estar usando recursos hasta que la computadora o el programa que lo está corriendo, deje de funcionar.
